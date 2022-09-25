@@ -1,0 +1,27 @@
+* {
+    box-sizing: border-box;
+}
+html, body {
+    height: 100%;
+}
+body {
+    padding: 3em;
+}
+.timer-bar {
+    background: black;
+}
+.fancy-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    align-items: center;
+    width: 100%;
+}
+.fancy-box {
+    background: #eee;
+    width: 400px;
+    transition: opacity;
+}
+.fancy-text {
+    padding: 1em;
+}
