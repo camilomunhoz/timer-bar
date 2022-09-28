@@ -5,11 +5,98 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Timer Bar Demo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="demo.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css">
 </head>
 <body>
 
-    <div class="fancy-container">
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <div class="card bg-light">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="form-check">
+                                <input class="form-check-input" name="mode" value="empty" type="radio" id="_1" checked>
+                                <label class="form-check-label" for="_1">empty</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" name="mode" value="fill" type="radio" id="_2">
+                                <label class="form-check-label" for="_2">fill</label>
+                            </div>
+                            <div class="form-group">
+                                width
+                                <input type="text" class="form-control" name="width" placeholder="100%">
+                                height
+                                <input type="text" class="form-control" name="height" placeholder="20px">
+                                background
+                                <input type="text" class="form-control" name="background" placeholder="#ccc">
+                                barBackground
+                                <input type="text" class="form-control" name="barBackground" placeholder="#007bff">
+                                borderRadius
+                                <input type="text" class="form-control" name="borderRadius" placeholder="0px">
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" name="anchor" value="left" type="radio" id="_3" checked>
+                                <label class="form-check-label" for="_3">Left</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" name="anchor" value="right" type="radio" id="_4">
+                                <label class="form-check-label" for="_4">Right</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" name="anchor" value="top" type="radio" id="_5">
+                                <label class="form-check-label" for="_5">Top</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" name="anchor" value="bottom" type="radio" id="_4">
+                                <label class="form-check-label" for="_4">Bottom</label>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="card">
+                    <div class="card-body">
+                        <div id="tb-example"></div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="btn btn-secondary event-triggers" data-event="trigger">trigger()</div>
+                        <div class="btn btn-secondary event-triggers" data-event="reverse">reverse()</div>
+                        <div class="btn btn-secondary event-triggers" data-event="reset">reset()</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="container">
+        <div class="row" id="example-1">
+            <div class="col">
+                <button class="btn btn-sm btn-secondary tb-trigger">Anchor Left</button>
+                <div class="tb-example"></div>
+            </div>
+            <div class="col">
+                <button class="btn btn-sm btn-secondary tb-trigger">Anchor Right</button>
+                <div class="tb-example"></div>
+            </div>
+            <div class="col">
+                <button class="btn btn-sm btn-secondary tb-trigger">Anchor Top</button>
+                <div class="tb-example"></div>
+            </div>
+            <div class="col">
+                <button class="btn btn-sm btn-secondary tb-trigger">Anchor Bottom</button>
+                <div class="tb-example"></div>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- <div class="fancy-container">
         <button id="fancy-trigger">Dale</button>
         <div class="fancy-box">
             <div class="fancy-text">
@@ -17,9 +104,10 @@
             </div>    
             <div class="fancy-timer-1"></div>
         </div>
-    </div>
+    </div> -->
 
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../src/timer-bar-1.0.js"></script>
     <script src="demo.js"></script>
 </body>

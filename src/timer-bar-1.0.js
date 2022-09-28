@@ -1,6 +1,9 @@
 class TimerBar {
     constructor(el, options = {}) {
         this.el = el
+        this.setOptions(options)
+    }
+    setOptions(options = {}) {
         this.mode = options.mode || 'empty'
         this.anchor = options.anchor || 'left'
         this.duration = options.duration || 2000
@@ -12,6 +15,7 @@ class TimerBar {
         this.height = options.height || '1em'
         this.barBackground = options.barBackground || '#007bff'
         this.background = options.background || '#ccc'
+        this.borderRadius = options.borderRadius || 0
 
         this.triggered = options.triggered || null
         // this.started = options.started || null
@@ -28,15 +32,19 @@ class TimerBar {
         this.el.style.background = this.background
         this.el.style.height = this.height
         this.el.style.width = this.width
+        this.el.style.borderRadius = this.borderRadius
         this.animate(true)
         this.el.style.position = 'relative'
     }
     setupBar() {
+        this.el.innerHTML = ''
         this.bar = document.createElement('div')
         this.bar.style.background = this.barBackground
         this.bar.style.position = 'absolute'
         this.bar.style.height = '100%'
         this.bar.style.width = '100%'
+        this.bar.style.borderRadius = this.borderRadius
+
         this.bar.style[this.anchor] = 0
         this.el.appendChild(this.bar)
     }
@@ -67,7 +75,6 @@ class TimerBar {
                 // throw Error
             }
         }
-        
     }
     whichToFill() {
         if (['top', 'bottom'].includes(this.anchor)) {
@@ -88,7 +95,7 @@ class TimerBar {
         this.animate(true)
     }
     reset() {
-        this.setTransition()
+        this.setTransition('none')
         // this.fillBar()
         this.animate(true)
         setTimeout(() => this.setTransition(), 0)

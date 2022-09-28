@@ -3,6 +3,7 @@
 }
 html, body {
     height: 100%;
+    font-family: 'Noto Sans Mono' !important;
 }
 body {
     padding: 3em;
